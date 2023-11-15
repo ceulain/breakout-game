@@ -132,7 +132,7 @@ const checkForCollisions = () => {
   if (ballCurrentPosition[1] <= 0) {
     //check for game over
     clearInterval(timerId);
-    score.innerHTML = "You lose";
+    scoreDisplay.innerHTML = "You lose";
     document.removeEventListener("keydown", moveUser);
   }
 };
