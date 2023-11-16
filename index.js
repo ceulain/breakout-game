@@ -165,8 +165,22 @@ const moveUser = (e) => {
 
 document.addEventListener("keydown", moveUser);
 
-// move ball
+// handle mobile gesture
+grid.addEventListener("touchstart", (e) => {
+  const touche = e.touches[0];
 
+  if (touche.clientX >= 0 && touche.clientX <= 200) {
+    currentPosition[0] -= 10;
+    drawUser();
+  }
+
+  if (touche.clientX >= 400 && touche.clientX <= 600) {
+    currentPosition[0] += 10;
+    drawUser();
+  }
+});
+
+// move ball
 const changeDirection = () => {
   if (xDirection === 2 && yDirection === 2) {
     yDirection = -2;
